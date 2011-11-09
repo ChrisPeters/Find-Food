@@ -2,41 +2,57 @@ from django.db import models
 
 class City(models.Model):
     city = models.CharField(max_length=255)
+    def get_absolute_url(self):
+        return "/city/%i/" % self.id
     def __unicode__(self):
         return self.city
 
 class State(models.Model):
     state = models.CharField(max_length=255)
+    def get_absolute_url(self):
+        return "/state/%i/" % self.id
     def __unicode__(self):
         return self.state
 
 class Building(models.Model):
     building = models.CharField(max_length=255, blank=True)
+    def get_absolute_url(self):
+        return "/building/%i/" % self.id
     def __unicode__(self):
         return self.building
 
 class Location_Name(models.Model):
     location_name = models.CharField(max_length=255, blank=True)
+    def get_absolute_url(self):
+        return "/location_name/%i/" % self.id
     def __unicode__(self):
         return self.location_name
 
 class Restaurant_Name(models.Model):
     restaurant_name = models.CharField(max_length=255)
+    def get_absolute_url(self):
+        return "/restaurant_name/%i/" % self.id
     def __unicode__(self):
         return self.restaurant_name
 
 class Restaurant_Type(models.Model):
     restaurant_type = models.CharField(max_length=255)
+    def get_absolute_url(self):
+        return "/restaurant_type/%i/" % self.id
     def __unicode__(self):
         return self.restaurant_type
 
 class Style_Of_Food(models.Model):
     style_of_food = models.CharField(max_length=255)
+    def get_absolute_url(self):
+        return "/style_of_food/%i/" % self.id
     def __unicode__(self):
         return self.style_of_food
 
 class Main_Combo(models.Model):
     main_combo = models.CharField(max_length=255, blank=True)
+    def get_absolute_url(self):
+        return "/main_combo/%i/" % self.id
     def __unicode__(self):
         return self.main_combo
 
@@ -48,6 +64,8 @@ class Location(models.Model):
     state = models.ForeignKey(State)
     point = models.CharField(max_length=255, blank=True)
     intersection = models.CharField(max_length=255, blank=True)
+    def get_absolute_url(self):
+        return "/location/%i/" % self.id
     def __unicode__(self):
         return self.location_name.location_name
 
@@ -60,6 +78,8 @@ class Restaurant_Bio(models.Model):
     grams_of_fat_of_number_one_combo = models.IntegerField(blank=True)
     dollar_menu = models.BooleanField()
     local = models.BooleanField()
+    def get_absolute_url(self):
+        return "/restaurant_bio/%i/" % self.id
     def __unicode__(self):
         return self.restaurant_name.restaurant_name
 
@@ -71,6 +91,8 @@ class Restaurant(models.Model):
     drive_thru = models.BooleanField()
     delivery = models.BooleanField()
     notes = models.TextField(blank=True)
+    def get_absolute_url(self):
+        return "/restaurants/%i/" % self.id
     def __unicode__(self):
         return self.restaurant_bio.restaurant_name.restaurant_name
 
