@@ -13,7 +13,7 @@ def homepage(request):
     })
 
 def detail(request, restaurant_id):
-    restaurant = Restaurant.objects.get(id=restaurant_id), Restaurant.objects.order_by('restaurant_bio__restaurant_name')
+    restaurant = Restaurant.objects.get(id=restaurant_id)
     return render_to_response('restaurants/detail.html', {
         'restaurant': restaurant,
     })

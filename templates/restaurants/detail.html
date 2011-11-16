@@ -1,5 +1,26 @@
-{% for object in restaurant %}
-    <a href= "{{object.get_absolute_url}}">
-        {{object}}</a>
-{% endfor %}
+{% extends "base.html" %}
 
+{% block main %}
+    <h1>{{ restaurant.restaurant_bio.restaurant_name }}</h1>
+<h3><b><u>Location:</u></b></h3>
+<i><b>Location name:</i></b> {{ restaurant.location }}
+<br><i><b>Phone Number:</i></b> {{ restaurant.phone_number }}
+<br><i><b>Closing Time:</i></b> {{ restaurant.closing_time }}
+<br><b><i>Address: </i></b>{{ restaurant.location.address }}
+<br><b><i>City/State: </i></b>{{ restaurant.location.city }}, {{ restaurant.location.state }}
+<br><b><i>Intersection:</i></b> {{ restaurant.location.intersection }}
+<br><b><i>Building:</i></b> {{ restaurant.location.building }}<br><b><i>Point:</i></b> {{ restaurant.location.point }}
+<br>
+<br><h3><b><u>Restaurant Bio:</u></b></h3>
+<i><b>Name:</i></b> {{ restaurant.restaurant_bio }}
+<br><i><b>Type:</i></b> {{ restaurant.restaurant_bio.restaurant_type }}
+<br><i><b>Style of Cuisine:</i></b> {{ restaurant.restaurant_bio.style_of_food }}
+<br><i><b>Local:</i></b> {{ restaurant.restaurant_bio.local }}
+<br><i><b>Drive Thru:</i></b> {{ restaurant.drive_thru }}
+<br><i><b>Delivery:</i></b> {{ restaurant.delivery }}
+<br><i><b>Dollar Menu:</i></b> {{ restaurant.restaurant_bio.dollar_menu }}
+<br><i><b>Main Combo:</i></b> {{ restaurant.restaurant_bio.main_combo }}
+<br><i><b>Price of No. 1 Combo:</i></b> {{ restaurant.restaurant_bio.price_of_number_one_combo }}
+<br><i><b>Grams of Fat in No. 1 Combo:</i></b> {{ restaurant.restaurant_bio.grams_of_fat_of_number_one_combo }}
+<br><i><b>Notes:</i></b> {{ restaurant.notes }}
+{% endblock%}
