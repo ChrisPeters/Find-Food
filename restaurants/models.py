@@ -10,7 +10,7 @@ class City(models.Model):
 class State(models.Model):
     state = models.CharField(max_length=255)
     def get_absolute_url(self):
-        return "/state/%i/" % self.id
+        return "/states/%i/" % self.id
     def __unicode__(self):
         return self.state
 
@@ -38,14 +38,14 @@ class Restaurant_Name(models.Model):
 class Restaurant_Type(models.Model):
     restaurant_type = models.CharField(max_length=255)
     def get_absolute_url(self):
-        return "/restaurant_type/%i/" % self.id
+        return "/restauranttype/%i/" % self.id
     def __unicode__(self):
         return self.restaurant_type
 
 class Style_Of_Food(models.Model):
     style_of_food = models.CharField(max_length=255)
     def get_absolute_url(self):
-        return "/style_of_food/%i/" % self.id
+        return "/cuisine/%i/" % self.id
     def __unicode__(self):
         return self.style_of_food
 
