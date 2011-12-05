@@ -2,8 +2,11 @@
 
 {% block main %}
 
-    <h2>Find Food</h2>
-Click on a restaurant below for a bio:
+    <h1>Find Food</h1>
+    <h3>Find the food you need, when you need it!</h3>
+Click on a restaurant below for a bio or click a tab on the top to find food.
+<br>
+<br><h4>Recently added eateries:</h4>
 
 {% for object in restaurant %}
     <h5><a href= "{{object.get_absolute_url}}">
